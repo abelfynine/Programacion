@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-cormorant), serif;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flower-effect {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  font-size: 28px;
+  animation: flowerPop 1.2s ease forwards;
+  z-index: 9999;
+}
+
+@keyframes flowerPop {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1) rotate(10deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120%) scale(1.8) rotate(25deg);
+  }
+}
